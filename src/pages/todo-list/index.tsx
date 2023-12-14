@@ -5,7 +5,6 @@ import { useContext, useEffect, useState } from "react";
 import TodoListComponent from "@/components/pages/TodoList";
 import TaskDialog from "@/components/pages/TaskDialog";
 import PreviousList from "@/components/pages/PreviousList";
-import usePreviousValue from "@/utils/UsePrevious";
 
 export default function TodoList() {
     const [task, setTask] = useState<Task>()
@@ -17,13 +16,6 @@ export default function TodoList() {
     function closeDialog() {
         setIsOpenDialog(false)
     }
-
-    // const { updatePreviousValue } = usePreviousValue()
-    // const rootContext = useContext(RootContext)
-    useEffect(() => {
-        console.log('werwqiesladf');
-
-    })
 
     return (
         <DefaultLayout>

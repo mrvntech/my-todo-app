@@ -8,7 +8,7 @@ export default function usePreviousValue() {
         previousValue.current = newValue
     }
     return {
-        previousValue,
+        previousValue: previousValue,
         updatePreviousValue
     };
 }

@@ -31,3 +31,5 @@ export enum ActionType {
 export const RootContext = createContext<Task[] | null>(null);
 
 export const DispatchContext = createContext<Dispatch<{ type: ActionType, id?: number, name?: string, state?: string }> | null>(null)
+
+export const PreviousValueContext = createContext<{ previousValue: Task[] | null, updatePreviousValue: Function } | null>(null)

@@ -1,5 +1,4 @@
-import { ActionType, DispatchContext, RootContext, Task } from "@/store/TodoList";
-import usePreviousValue from "@/utils/UsePrevious";
+import { ActionType, DispatchContext, PreviousValueContext, RootContext, Task } from "@/store/TodoList";
 import { Dialog, DialogContent, DialogActions, Button, TextField } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
 interface Props {
@@ -26,12 +25,12 @@ export default function TaskDialog(props: Props) {
         props.setTask(undefined)
         props.setAction(undefined)
     }
-    const { updatePreviousValue } = usePreviousValue()
+    const previousContext = useContext(PreviousValueContext)
     const rootContext = useContext(RootContext)
     useEffect(() => {
         return () => {
             console.log('sadfasdf', rootContext);
-            updatePreviousValue(rootContext ? [...rootContext] : null)
+            previousContext?.updatePreviousValue(rootContext ? [...rootContext] : null)
         }
     })
     return (
